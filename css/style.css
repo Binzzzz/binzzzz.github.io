@@ -264,8 +264,8 @@ Color styles - add you color here
 .slides-container h1 span,
 .planContainer .options li,
 .error,
-#options li:hover,
-#options li.actcat,
+.options li:hover,
+.options li.actcat,
 .headerbar a:hover,
 .social-list ul li a:hover,
 .num,
@@ -288,7 +288,7 @@ Color styles - add you color here
     color: #CA0004;
 }
 #team .content,
-#options li.back,
+.options li.back,
 #subscribe .content,
 #prices .content,
 .simple-page {
@@ -1088,17 +1088,17 @@ right: 7%;
     opacity: 0;
     display: none;
 }
-#options {
+.options {
     margin: 50px auto 20px;
     max-width: 600px;
     text-align: center;
     position: relative;
     z-index: 2;
 }
-#options ul {
+.options ul {
     position: relative;
 }
-#options li {
+.options li {
     display: inline-block;
     margin-bottom: 5px;
     color: #666;
@@ -1110,7 +1110,7 @@ right: 7%;
     font-family: 'TitilliumWeb-Regular', ;
     position: relative;
 }
-#options li.back {
+.options li.back {
     z-index: 8;
     padding: 0;
     margin-bottom: 5px;
@@ -1121,7 +1121,7 @@ right: 7%;
 .box {
    width: 33%;
 text-align: center;
-padding: 0px;
+padding: 0px; 
 }
 .box a {
     position: relative;
@@ -1778,7 +1778,22 @@ map styles
     z-index: 3;
     cursor: pointer;
 }
+.close-mail{
+position: absolute;
+top: 6px;
+right: 0%;
+width: 22px;
+height: 50px;
+z-index: 3;
+cursor: pointer;
+}
 .close-map img {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    z-index: 2;
+}
+.close-mail img {
     position: absolute;
     top: 5px;
     right: 8px;

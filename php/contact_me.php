@@ -50,7 +50,7 @@ if($_POST)
 		exit();
 	}else{
 		echo 'Hi '.$user_Name .', Thank you for your email! ';
-		echo 'Your email has bee sand.';
+		echo 'Your email has been send.';
 	}
 }
 ?>
