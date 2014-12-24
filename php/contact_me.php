@@ -6,8 +6,8 @@ if($_POST)
         die();
     } 
 	
-	$to_Email   	= "myemail@gmail.com"; //Replace with recipient email address
-	$subject        = 'Ah!! My email from Somebody out there...'; //Subject line for emails
+	$to_Email   	= "binoybalu1993@gmail.com"; //Replace with recipient email address
+	$subject        = 'Feedback'; //Subject line for emails
 	
 	//check $_POST vars are set, exit if any missing
 	if(!isset($_POST["userName"]) || !isset($_POST["userEmail"])  || !isset($_POST["userMessage"]))

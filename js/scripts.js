@@ -201,13 +201,6 @@ mouseDrag: false,
 touchDrag: false,
 transitionStyle: "goDown"
 });
-$("#priceSlider").owlCarousel({
-navigation: false,
-pagination: false,
-slideSpeed: 300,
-items: 3,
-itemsDesktop: false,
-});
 // about animation --------
 $(".next-slide, .close").click(function () {
 var ww = $(window).width();
@@ -406,7 +399,7 @@ var email = $('#subscriptionForm').val();
 $.ajax({
 url: 'php/subscription.php',
 type: 'POST',
-dataType: 'json',
+dataType: 'json ',
 data: {
 'email': email
 },
@@ -920,19 +913,6 @@ mapOptions);
 var styledMapOptions = {
 name: "robo"
 }
-var contentString = '<div id="content" style = "background-color:#C20404;color:#fff;">'+
-'<h3>Robo Inventions</h3>'+
-'<div id="bodyContent">'+
-'<h4><p>Robo Inventions Pvt Ltd.'+
-'Thittayil Bhavan, Thanal '+
-'Near Udyan convention centre,'+
-'Behind Kent\'s \'Nalukettu\','+
-'Kottankavu -Arkakkadavu Road'+
-'Vennala Cochin '+
-' Kerala'+
-' India – 682028</p></h4>'+
-'</div>'+
-'</div>';
 var infowindow = new google.maps.InfoWindow({
 content: contentString,
 maxWidth:800,
