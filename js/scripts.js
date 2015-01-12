@@ -826,125 +826,122 @@ $("#ebrochure").click(function() {
 // // hope the server sets Content-Disposition: attachment!
 window.location = './images/ebrochure.pdf';
 });
-// google map styles and functions --------
-var map;
-// your coordinates --------
-var robo = new google.maps.LatLng( 9.992772,76.323437);
-function initialize() {
-var styles = [
-{
-featureType: 'water',
-elementType: 'all',
-stylers: [
-{ hue: '#C20404' },
-{ saturation: -100 },
-{ lightness: -18 },
-{ visibility: 'on' }
-]
-},{
-featureType: 'landscape',
-elementType: 'all',
-stylers: [
-{ hue: '#C20404' },
-{ saturation: -100 },
-{ lightness: -78 },
-{ visibility: 'on' }
-]
-},{
-featureType: 'road',
-elementType: 'all',
-stylers: [
-{ hue: '#C20404' },
-{ saturation: -100 },
-{ lightness: -34 },
-{ visibility: 'on' }
-]
-},{
-featureType: 'road.local',
-elementType: 'all',
-stylers: [
-{ hue: '#C20404' },
-{ saturation: -115 },
-{ lightness: -12 },
-{ visibility: 'on' }
-]
-},{
-featureType: 'poi.park',
-elementType: 'all',
-stylers: [
-{ hue: '#C20404' },
-{ saturation: -100 },
-{ lightness: -3 },
-{ visibility: 'on' }
-]
-},{
-featureType: 'poi',
-elementType: 'all',
-stylers: [
-{ hue: '#C20404' },
-{ saturation: -500 },
-{ lightness: -3 },
-{ visibility: 'on' }
-]
-},{
-featureType: 'transit',
-elementType: 'all',
-stylers: [
-{ hue: '#212121' },
-{ saturation: -20 },
-{ lightness: -2 },
-{ visibility: 'on' }
-]
+// google map styles and functions  --------
+
+	var map;
+	// your coordinates   --------
+	var robo = new google.maps.LatLng( 9.992772,76.323437);	
+	function initialize() {	
+	  var styles = [
+		{
+			featureType: 'water',
+			elementType: 'all',
+			stylers: [
+				{ hue: '#C20404' },
+				{ saturation: -100 },
+				{ lightness: -18 },
+				{ visibility: 'on' }
+			]
+		},{
+			featureType: 'landscape',
+			elementType: 'all',
+			stylers: [
+				{ hue: '#C20404' },
+				{ saturation: -100 },
+				{ lightness: -78 },
+				{ visibility: 'on' }
+			]
+		},{
+			featureType: 'road',
+			elementType: 'all',
+			stylers: [
+				{ hue: '#C20404' },
+				{ saturation: -100 },
+				{ lightness: -34 },
+				{ visibility: 'on' }
+			]
+		},{
+			featureType: 'road.local',
+			elementType: 'all',
+			stylers: [
+				{ hue: '#C20404' },
+				{ saturation: -115 },
+				{ lightness: -12 },
+				{ visibility: 'on' }
+			]
+		},{
+			featureType: 'poi.park',
+			elementType: 'all',
+			stylers: [
+				{ hue: '#C20404' },
+				{ saturation: -100 },
+				{ lightness: -3 },
+				{ visibility: 'on' }
+			]
+		},{
+			featureType: 'poi',
+			elementType: 'all',
+			stylers: [
+				{ hue: '#C20404' },
+				{ saturation: -500 },
+				{ lightness: -3 },
+				{ visibility: 'on' }
+			]
+		},{
+			featureType: 'transit',
+			elementType: 'all',
+			stylers: [
+				{ hue: '#212121' },
+				{ saturation: -20 },
+				{ lightness: -2 },
+				{ visibility: 'on' }
+			]
+		}
+	
+	  ];  
+        
+	  var mapOptions = {
+		zoom:18,
+		zoomControl: false,
+		scaleControl: false,
+		scrollwheel: false,
+		disableDefaultUI:true,
+		center: robo,
+		mapTypeControlOptions: {
+		   mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'bestfromgoogle']
+		}
+	  };
+	map = new google.maps.Map(document.getElementById("map_canvas"),
+		 mapOptions);
+	var styledMapOptions = {
+		  name: "robo"
+        
+	}	
+	var roboMapType = new google.maps.StyledMapType(
+		styles, styledMapOptions);
+	map.mapTypes.set('bestfromgoogle',roboMapType);
+	map.setMapTypeId('bestfromgoogle');				
+	var companyImage = new google.maps.MarkerImage('images/marker.png',
+		new google.maps.Size(150,150),
+		new google.maps.Point(0,0),
+		new google.maps.Point(36,65)
+	);
+
+	// your marker coordinates   --------
+	var companyPos = new google.maps.LatLng(9.992772,76.323437);
+	var companyMarker = new google.maps.Marker({
+		position: companyPos,
+		map: map,
+		icon: companyImage,
+		zIndex: 3,
+        draggable:false,
+        title: "Robo Inventions"
+	});
+          google.maps.event.addListener(marker, 'click', swal({
+  title: "Auto close alert!",
+  text: "I will close in 2 seconds.",
+  timer: 2000
+}));
+        google.maps.event.addDomListener(window, 'load', initialize);
+
 }
-];
-var mapOptions = {
-zoom:18,
-zoomControl: false,
-scaleControl: false,
-scrollwheel: false,
-disableDefaultUI:true,
-center: robo,
-mapTypeControlOptions: {
-mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'bestfromgoogle']
-}
-};
-var	map = new google.maps.Map(document.getElementById("map_canvas"),
-mapOptions);
-var styledMapOptions = {
-name: "robo"
-}
-var infowindow = new google.maps.InfoWindow({
-content: contentString,
-maxWidth:800,
-maxHeight:220
-});
-var roboMapType = new google.maps.StyledMapType(
-styles, styledMapOptions);
-map.mapTypes.set('bestfromgoogle',roboMapType);
-map.setMapTypeId('bestfromgoogle');
-var companyImage = new google.maps.MarkerImage('images/marker.png',
-new google.maps.Size(150,150),
-new google.maps.Point(0,0),
-new google.maps.Point(36,65)
-);
-// your marker coordinates --------
-var companyPos = new google.maps.LatLng(9.992772,76.323437);
-var companyMarker = new google.maps.Marker({
-position: companyPos,
-map: map,
-icon: companyImage,
-zIndex: 3,
-draggable:false,
-title: "Robo Inventions",
-animation: google.maps.Animation.DROP
-});
-google.maps.event.addListener(companyMarker, 'click', function() {
-swal({
-title: "Robo Inventions",
-text: 'Robo Inventions Pvt Ltd.\nFirst floor,'+
-'Thittayil Bhavan\n no. 7,Thanal\n Near Udyan'+ 'convention centre,\n Behind Kent\'s \'Nalukettu\',\n'+ 'Kottankavu -Arkakkadavu Road\n Vennala Cochin\n'+ 'Kerala\n India – 682028",',
-timer: 1500000
-});
-});
-}
-google.maps.event.addDomListener(window, 'load', initialize);
