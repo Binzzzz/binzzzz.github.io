@@ -4,7 +4,7 @@ if(isset($_GET['name'])){
 $name = $_GET['name'];
 $email = $_GET['email'];
 $msg = $_GET['msg'];
-$to = "binoybalu1993@gmail.com";
+$to = "support@roboinventions.com";
 $subject = "Feedback mail";
 
 $message = "
@@ -32,9 +32,9 @@ $message = "
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-// More headers
-$headers .= 'From: <webmaster@example.com>' . "\r\n";
-$headers .= 'Cc: myboss@example.com' . "\r\n";
+// More header
+$headers .= 'From:' . "\r\n";
+$headers .= 'Cc:pratheesh@roboinventions.com,puneet@roboinventions.com,$email' . "\r\n";
 
 $mailer = mail($to,$subject,$message,$headers);
  

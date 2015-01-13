@@ -802,6 +802,14 @@ title: "We are working on the blog",
 timer: 5000
 });
 });
+//reach
+$("#reach").bind('click', function (event){
+swal({
+text: 'Robo Inventions Pvt Ltd.\nFirst floor,'+
+'Thittayil Bhavan\n no. 7,Thanal\n Near Udyan'+ 'convention centre,\n Behind Kent\'s \'Nalukettu\',\n'+ 'Kottankavu -Arkakkadavu Road\n Vennala Cochin\n'+ 'Kerala\n India “682028"',
+timer: 5000
+});
+});
 //tel
 var mq = window.matchMedia( "(min-width: 500px)" );
 if (mq.matches) {
