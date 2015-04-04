@@ -778,7 +778,7 @@
             var email = $("#email").val()
             var msg = $("#message").val()
             $("#result").html("");
-            $.get("sendmail.php", {
+            $.post("sendmail.php", {
                     name: name,
                     email: email,
                     msg: msg
