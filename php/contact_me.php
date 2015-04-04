@@ -6,7 +6,7 @@ if($_POST)
         die();
     } 
 	
-	$to_Email   	= "binoybalu1993@gmail.com"; //Replace with recipient email address
+	$to_Email   	= "binoybalu1993@gmail.com,csk@roboinventions.com"; //Replace with recipient email address
 	$subject        = 'Feedback'; //Subject line for emails
 	
 	//check $_POST vars are set, exit if any missing

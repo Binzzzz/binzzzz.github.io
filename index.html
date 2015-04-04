@@ -650,7 +650,7 @@
             <!--=============== section portfolio end ===============-->
             <!--=============== section subscribe ===============-->
             <div id="subscribe" class="sections">
-                <div class="content">
+                <div class="content">#result
                     <div class="quote-icon"><i class="fa fa-rss"></i>
                     </div>
                     <div class="rester"></div>
@@ -698,7 +698,7 @@
                                 <textarea name="message" id="message"></textarea>
                                 <div class="clear"></div>
                                 <label>
-                                    <button class="submit_btn transition" id="submit_btn" onclick="send_mail();">SEND</button>
+                                    <button class="submit_btn transition" id="submit_btn">SEND</button>
                                 </label>
                                 <div id="result"></div>
                             </fieldset>
@@ -772,22 +772,22 @@
     <script type="text/javascript" src="js/hoverdir.js"></script>
 
     <script>
-        function send_mail() {
-
-            var name = $("#name").val();
-            var email = $("#email").val()
-            var msg = $("#message").val()
-            $("#result").html("");
-            $.post("sendmail.php", {
-                    name: name,
-                    email: email,
-                    msg: msg
-                })
-                .done(function (data) {
-                    $("#result").html(data);
-                });
-
-        }
+        //        function send_mail() {
+        //
+        //            var name = $("#name").val();
+        //            var email = $("#email").val()
+        //            var msg = $("#message").val()
+        //            $("#result").html("");
+        //            $.post("sendmail.php", {
+        //                    name: name,
+        //                    email: email,
+        //                    msg: msg
+        //                })
+        //                .done(function (data) {
+        //                    $("#result").html(data);
+        //                });
+        //
+        //        }
 
         function subcription() {
             swal("Now You Have!",
