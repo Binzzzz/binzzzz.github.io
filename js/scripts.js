@@ -121,14 +121,28 @@ function initRobo() {
     }
 
     function stats(duration) {
+
+
             $('.stats .num').each(function () {
+
+                var randomnumber = Math.floor(Math.random() * 100);
+                console.log(randomnumber);
                 var container = $(this);
-                var num = container.attr('data-num');
-                var content = container.attr('data-content');
-                number(num, content, container, duration);
+                var temp2 = container.attr('data-num');
+                var temp1 = container.attr('data-content');
+                console.log(temp1, temp2);
+                if (temp1 == '45' && temp2 == '45') {
+                    number(temp1, temp2, container, duration);
+                } else {
+                    var num = container.attr('data-num');
+                    var content = container.attr('data-content');
+                    number(num, content, container, duration);
+                }
+
             });
         }
         // navigation links ------------------
+
     $(".inner a.scroll-link , .body-overlay").bind('click', function (event) {
         event.preventDefault();
         $.scrollTo(
@@ -1015,3 +1029,4 @@ function initialize() {
     google.maps.event.addDomListener(window, 'load', initialize);
 
 }
+$("#cups").data("content") === "45";

@@ -29,6 +29,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
+                <span></span>
             </div>
             <div class="inner">
                 <img src="images/logo.png" class="logo" alt="" title="">
@@ -76,17 +77,24 @@
                     </li>
                     <li class="inline"><a href="#contacts" class="scroll-links">Contact</a>
                     </li>
+                    <div id="tel" class="phone left" name="tooltip" title="Call Us Now"><i class="fa fa-mobile fa-4x"></i>
+                    </div>
                 </nav>
             </header>
+
         </div>
+
         <!--=============== navigation end ===============-->
         <div class="overlay fixed-overlay body-overlay"></div>
         <div class="wrapper">
             <!--=============== intro slide ===============-->
+
             <div id="intro">
                 <div id="topSlide">
                     <div id="slides">
+
                         <ul class="slides-container">
+
                             <!-- Slide 1 -->
                             <li style="background-color:black;">
                                 <div class="rester"></div>
@@ -209,7 +217,7 @@
                             <li class="grid-1">
                                 <div class="milestone-counter">
                                     <div class="stats animaper">
-                                        <div class="num" data-content="45" data-num="45">0</div>
+                                        <div id="cups" data-content="45" class="num" data-num="45"></div>
                                     </div>
                                 </div>
                                 <h6><i class="fa fa-coffee fa-2x"></i><span>Coffee Cups Today</span></h6>
@@ -227,7 +235,7 @@
                             <li class="grid-1">
                                 <div class="milestone-counter">
                                     <div class="stats animaper">
-                                        <div class="num" data-content="35k" data-num="35k">k</div>
+                                        <div class="num" data-content="35" data-num="35">k</div>
                                     </div>
                                 </div>
                                 <h6><i class="fa fa-male fa-2x"></i><span>Mentees</span></h6>
@@ -791,8 +799,7 @@
 
         function subcription() {
             swal("Now You Have!",
-            }
-            "Subscribed!", "success");
+                "Subscribed!", "success");
         }
     </script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
@@ -1000,6 +1007,12 @@
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-43457196-1', 'auto');
         ga('send', 'pageview');
+        // 'Getting' data-attributes using getAttribute
+        var plan = document.getElementById('cups');
+        var fruitCount = plan.getAttribute('data-content'); // fruitCount = '12'
+
+        // 'Setting' data-attributes using setAttribute
+        plan.setAttribute('data-content', Math.floor(Math.random() * 100)); // Pesky birds
     </script>
 </body>
 
