@@ -833,14 +833,14 @@ $("#reach").bind('click', function (event) {
 //tel
 var mq = window.matchMedia("(min-width: 500px)");
 if (mq.matches) {
-    $("#tel").bind('click', function (event) {
+    $(".tel").bind('click', function (event) {
         swal({
             title: "Call Us : +914843068676",
             timer: 10000
         });
     });
 } else {
-    $("#tel").bind('click', function (event) {
+    $(".tel").bind('click', function (event) {
         document.location.href = "tel:+914843068676"
     });
 }
